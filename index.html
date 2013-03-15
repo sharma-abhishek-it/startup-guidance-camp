@@ -1,0 +1,206 @@
+<html>
+    <head>
+        <title>
+            Startup Guidance Camp
+        </title>
+        <!--<script type="text/javascript" src="http://typecast.com/project_css/xQkGYTtPBj/62188318a74b5.js"></script>-->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great|Clicker+Script|Abril+Fatface' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            body
+            {
+                /*width: 100%;
+                height: 100%;*/
+                margin: 0;
+                text-align: center;
+            }
+            #nav
+            {
+                width:80%;
+                height: 100px;
+                margin-left: 10%;
+            }
+            #logo
+            {
+                display: inline-block;
+                float: left;
+                font-family: 'Clicker Script', cursive;
+                font-size: 41px;
+                cursor: pointer;
+            }
+            #logo span
+            {
+                display: block;
+                text-align: left;
+            }
+            #navitems
+            {
+                display: inline-block;
+                float: right;
+                font-size: 32px;
+            }
+            .headings
+            {
+                font-family: 'Abril Fatface', cursive;
+            }
+            #taglines
+            {
+                width: 80%;
+                height: 360px;
+                min-width: 800px;
+                font-size: 6.5em;
+                line-height: 1.09em;
+                display: table;
+                background-repeat: repeat;
+                background-image: url("back.png");
+                margin-top: 50px;
+                margin-left: 10%;
+                border-radius: 5px;
+            }
+            #taglines .content
+            {
+                display:table-cell;
+                vertical-align: middle;
+                color: White;
+                font-style: normal;
+                font-weight: 400;
+                font-family: 'Fredericka the Great', cursive;
+                text-align: center;
+            }
+            #tag-icons
+            {
+                font-size: 20px;
+                margin-top: 20px;
+                color: White;
+                display: inline-block;
+            }
+            #goto-left-banner, #goto-right-banner
+            {
+                width:30px;
+                height:30px;
+                background-color: #666666;
+                display: inline-block;
+                float: left;
+                border-radius:20px;
+                cursor: pointer;
+            }
+            #goto-right-banner
+            {
+                margin-left: 20px;
+            }
+            #goto-left-banner.mousedown, #goto-right-banner.mousedown
+            {
+                background-color: Black;
+            }
+            #goto-left-banner.disabled, #goto-right-banner.disabled
+            {
+                opacity: 0.5;
+            }
+            #goto-left-banner .icon-left-open, #goto-right-banner .icon-right-open
+            {
+                display: block;
+                margin-top: 5px;
+            }
+            #goto-left-banner .icon-left-open
+            {
+                float: left;
+            }
+            #goto-right-banner .icon-right-open
+            {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <link rel="stylesheet" href="css/fontello.css">
+        <link rel="stylesheet" href="css/animation.css"><!--[if IE 7]>
+        <link rel="stylesheet" href="css/fontello-ie7.css"><![endif]-->
+        <div id="nav">
+            <div id="logo"><span>startupguidance</span><span style="margin-top: -24px;">camp.com</span></div>
+            <div id="navitems">
+        </div>
+        <div id="taglines">
+            <div class="content">
+                Why 9 of every 10 starting businesses fail?
+            </div>
+        </div>
+        <div id="tag-icons">
+            <div id="goto-left-banner" class="disabled" href="#"><i class="icon-left-open"></i></div>
+            <div id="goto-right-banner" href="#"><i class="icon-right-open"></i></div>
+        </div>
+        <script>
+            var selectedBanner = 0;
+            var Banners = [
+                "Why 9 of every 10 starting businesses fail?",
+                "Investors don’t give attention? Why will they!",
+                "Do I need a prototype? Yes you do!",
+                "Alright Prototype. But how do I make one?",
+                "So less money. So much to do.",
+                "Is marketing a plus or is it everything?",
+                "Technology? Nobody told me that will come too?"
+            ];
+            function change_banner(dir)
+            {
+
+            }
+            $(document).ready(function()
+            {
+                $('#goto-left-banner').mousedown(function()
+                {
+                    if (selectedBanner == 0 )
+                        return;
+                    $(this).addClass("mousedown");
+                });
+                $('#goto-right-banner').mousedown(function()
+                {
+                    if (selectedBanner == Banners.length - 1)
+                        return;
+                    $(this).addClass("mousedown");
+                });
+                $('#goto-left-banner').mouseup(function()
+                {
+                    $(this).removeClass("mousedown");
+                    setBanner(-1);
+                });
+                $('#goto-right-banner').mouseup(function()
+                {
+                    $(this).removeClass("mousedown");
+                    setBanner(1);
+                });
+                
+            
+                function setBanner(dir){
+                    
+                    if (selectedBanner == 0 && dir == -1)
+                    {
+                        return;
+                    }
+                    else if (selectedBanner == Banners.length - 1 && dir == 1)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        $('#tag-icons').children().removeClass('disabled');
+                        selectedBanner += dir;
+                    }
+                    if (selectedBanner == 0)
+                    {
+                        $('#goto-left-banner').addClass('disabled');
+                    } 
+                    else if (selectedBanner == Banners.length - 1)
+                    {
+                        $('#goto-right-banner').addClass('disabled');
+                    }
+                    $('#taglines .content').fadeOut(200, function()
+                    {
+                        $(this).html(Banners[selectedBanner]);
+                        $(this).fadeIn(200);
+                    });
+                };
+                            
+                    
+            });
+        </script>
+    </body>
+</html>
