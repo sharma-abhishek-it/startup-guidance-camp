@@ -20,6 +20,7 @@
                 height: 100px;
                 margin-left: 10%;
             }
+
             #logo
             {
                 display: inline-block;
@@ -37,7 +38,26 @@
             {
                 display: inline-block;
                 float: right;
-                font-size: 32px;
+                font-size: 40px;
+            }
+            #navitems a
+            {
+                color: #024668;
+                text-decoration: none;
+                display: block;
+                float:left;
+                margin-left: 50px;
+                margin-top: 20px;
+            }
+            #navitems a:visited
+            {
+                text-decoration: none;
+                color: #024668;
+            }
+            #navitems a:hover
+            {
+                background-color: #024668;
+                color: White;
             }
             .headings
             {
@@ -118,6 +138,10 @@
         <div id="nav">
             <div id="logo"><span>startupguidance</span><span style="margin-top: -24px;">camp.com</span></div>
             <div id="navitems">
+                <a class="headings" href="#about">about</a>
+                <a class="headings" href="#people">people</a>
+                <a class="headings" href="#register">register</a>
+            </div>
         </div>
         <div id="taglines">
             <div class="content">
@@ -128,6 +152,7 @@
             <div id="goto-left-banner" class="disabled" href="#"><i class="icon-left-open"></i></div>
             <div id="goto-right-banner" href="#"><i class="icon-right-open"></i></div>
         </div>
+        
         <script>
             var selectedBanner = 0;
             var Banners = [
