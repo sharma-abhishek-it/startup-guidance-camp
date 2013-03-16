@@ -1,0 +1,122 @@
+body
+{
+    /*width: 100%;
+    height: 100%;*/
+    margin: 0;
+    text-align: center;
+}
+#nav
+{
+    width:80%;
+    height: 100px;
+    margin-left: 10%;
+}
+
+#logo
+{
+    display: inline-block;
+    float: left;
+    font-family: 'Clicker Script', cursive;
+    font-size: 41px;
+    cursor: pointer;
+}
+#logo span
+{
+    display: block;
+    text-align: left;
+}
+#navitems
+{
+    display: inline-block;
+    float: right;
+    font-size: 40px;
+}
+#navitems a
+{
+    color: #024668;
+    text-decoration: none;
+    display: block;
+    float:left;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+#navitems a:visited
+{
+    text-decoration: none;
+    color: #024668;
+}
+#navitems a:hover
+{
+    background-color: #024668;
+    color: White;
+}
+.headings
+{
+    font-family: 'Abril Fatface', cursive;
+}
+#taglines
+{
+    width: 80%;
+    height: 360px;
+    min-width: 800px;
+    font-size: 6.5em;
+    line-height: 1.09em;
+    display: table;
+    background-repeat: repeat;
+    background-image: url("../back.png");
+    margin-top: 50px;
+    margin-left: 10%;
+    border-radius: 5px;
+}
+#taglines .content
+{
+    display:table-cell;
+    vertical-align: middle;
+    color: White;
+    font-style: normal;
+    font-weight: 400;
+    font-family: 'Fredericka the Great', cursive;
+    text-align: center;
+}
+#tag-icons
+{
+    font-size: 20px;
+    margin-top: 20px;
+    color: White;
+    display: inline-block;
+}
+#goto-left-banner, #goto-right-banner
+{
+    width:30px;
+    height:30px;
+    background-color: #666666;
+    display: inline-block;
+    float: left;
+    border-radius:20px;
+    cursor: pointer;
+}
+#goto-right-banner
+{
+    margin-left: 20px;
+}
+#goto-left-banner.mousedown, #goto-right-banner.mousedown
+{
+    background-color: Black;
+}
+#goto-left-banner.disabled, #goto-right-banner.disabled
+{
+    opacity: 0.5;
+}
+#goto-left-banner .icon-left-open, #goto-right-banner .icon-right-open
+{
+    display: block;
+    margin-top: 5px;
+}
+#goto-left-banner .icon-left-open
+{
+    float: left;
+}
+#goto-right-banner .icon-right-open
+{
+    float: right;
+}
