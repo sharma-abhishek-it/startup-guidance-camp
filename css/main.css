@@ -4,55 +4,66 @@ body
     height: 100%;*/
     margin: 0;
     text-align: center;
+    font-family: serif;
 }
 #nav
 {
     width:80%;
-    height: 100px;
+    height: 80px;
     margin-left: 10%;
+    text-align: center;
+    position: fixed;
+    top: 0px;
+    background-color: White;
 }
 
 #logo
 {
-    display: inline-block;
-    float: left;
+    /*display: inline-block;
+    float: middle;*/
     font-family: 'Clicker Script', cursive;
     font-size: 41px;
-    cursor: pointer;
+    /*width: 320px;*/
+    text-align: center;
+    color: rgb(100,100,100);
 }
 #logo span
 {
-    display: block;
     text-align: left;
+    cursor: pointer;
 }
 #navitems
 {
-    display: inline-block;
-    float: right;
-    font-size: 40px;
+    /*display: block;
+    /*display: inline-block;*/
+    /*float: middle;*/
+    font-size: 14px;
+    text-align: center;
+    /*width: 320px;*/
 }
 #navitems a
 {
-    color: #024668;
+    color: rgb(50,50,50);
     text-decoration: none;
-    display: block;
-    float:left;
-    margin-left: 50px;
-    margin-top: 20px;
+    display: inline-block;
+    margin-top: 5px;
+    width: 100px;
 }
 #navitems a:visited
 {
     text-decoration: none;
-    color: #024668;
+    color: rgb(50,50,50);
 }
 #navitems a:hover
 {
-    background-color: #024668;
-    color: White;
+    /*background-color: #024668;
+    color: White;*/
+    text-decoration: underline;
 }
 .headings
 {
     font-family: 'Abril Fatface', cursive;
+    font-size: 42px;
 }
 #taglines
 {
@@ -64,7 +75,7 @@ body
     display: table;
     background-repeat: repeat;
     background-image: url("../back.png");
-    margin-top: 50px;
+    margin-top: 180px;
     margin-left: 10%;
     border-radius: 5px;
 }
@@ -119,4 +130,17 @@ body
 #goto-right-banner .icon-right-open
 {
     float: right;
+}
+
+#about
+{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    text-align: left;
+    padding-top: 80px;
+}
+#about p
+{
+    text-indent: 50px;
 }

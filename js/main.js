@@ -36,7 +36,16 @@ $(document).ready(function()
         $(this).removeClass("mousedown");
         setBanner(1);
     });
-    
+    $('#navitems a').click(function(e)
+    {
+        $('html, body').scrollTo(this.hash, this.hash);
+        e.preventDefault();
+    });
+    $('#logo span').click(function(e)
+    {
+        $('html, body').scrollTo('html', 'html');
+        e.preventDefault();
+    });
 
     function setBanner(dir){
         
