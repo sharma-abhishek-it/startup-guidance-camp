@@ -41,9 +41,9 @@ $(document).ready(function()
         $('html, body').scrollTo(this.hash, this.hash);
         e.preventDefault();
     });
-    $('#logo span').click(function(e)
+    $('#logo a').click(function(e)
     {
-        $('html, body').scrollTo('html', 'html');
+        $('html, body').scrollTo(this.hash, this.hash);
         e.preventDefault();
     });
 
