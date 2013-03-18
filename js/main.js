@@ -1,12 +1,12 @@
 var selectedBanner = 0;
 var Banners = [
-    "Why 9 of every 10 starting businesses fail?",
-    "Investors don’t give attention? Why will they!",
-    "Do I need a prototype? Yes you do!",
-    "Alright Prototype. But how do I make one?",
-    "So less money. So much to do.",
-    "Is marketing a plus or is it everything?",
-    "Technology? Nobody told me that will come too?"
+    "Why 9 out of every 10 businesses fail to survive even a year?",
+    "What makes up a successful business venture?",
+    "Is a prototype needed? How can I develop one?",
+    "How to make most out of your mentors, investors and VCs?",
+    "How much money? Where from? How to use it?",
+    "How technology can actually help?",
+    "Who is your customer? Why will she pay you?"
 ];
 function change_banner(dir)
 {
