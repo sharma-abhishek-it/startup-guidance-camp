@@ -18,6 +18,14 @@ body
 {
     color: #e22a0d;
 }
+.bold
+{
+    font-weight: bold;
+}
+.italics
+{
+    font-style: italic;
+}
 #nav
 {
     width: 100%;
@@ -106,6 +114,7 @@ body
     margin-top: 180px;
     margin-left: 10%;
     border-radius: 5px;
+    padding: 5px;
 }
 #taglines .content
 {
@@ -171,13 +180,9 @@ body
     margin-left: 10%;
 }
 
-#about
-{
-    margin-top: 10%;
-}
 #about p
 {
-    font-size: 20px;
+    font-size: 1.2em;
     word-spacing: 4px;
     width: 90%;
     margin-left: 10%;
@@ -222,5 +227,12 @@ body
 #takeaways .content
 {
     margin-top: 20px;
-    text-align: justify;
+    text-align: center;
+}
+
+#people p
+{
+    font-size: 1.2em;
+    word-spacing: 4px;
+    line-height: 1.3;
 }
