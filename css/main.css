@@ -128,11 +128,24 @@ body
 }
 #tag-icons
 {
-    font-size: 20px;
+    /*font-size: 20px;*/
     margin-top: 20px;
     /*color: White;*/
     color: #666666;
-    display: inline-block;
+    width: 180px;
+    margin: auto;
+    margin-top: 20px;
+    /*display: inline-block;*/
+}
+#tag-icons div
+{
+    width: 10px;
+    height: 10px;
+    background-color: #666666;
+    list-style-type: none;
+    float: left;
+    margin-right: 15px;
+    border-radius: 10px;
 }
 #goto-left-banner, #goto-right-banner
 {

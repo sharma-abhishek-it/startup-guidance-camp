@@ -1,3 +1,10 @@
+function appendBannerSelectors(items, parent)
+{
+    for (var i = 0; i < items; i++) {
+        $(parent).append($('<div>'));
+    };
+}
+
 var selectedBanner = 0;
 var Banners = [
     "Why 9 out of every 10 businesses fail to survive even a year?",
@@ -8,12 +15,14 @@ var Banners = [
     "How technology can actually help?",
     "Who is your customer? Why will she pay you?"
 ];
+var BannerSelectors = [];
 function change_banner(dir)
 {
 
 }
 $(document).ready(function()
 {
+    appendBannerSelectors(Banners.length, '#tag-icons');
     $('#goto-left-banner').mousedown(function()
     {
         if (selectedBanner == 0 )
