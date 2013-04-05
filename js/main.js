@@ -5,9 +5,16 @@ function appendBannerSelectors(items, parent)
     };
 }
 
-function checkBannerToSwitch()
+function checkBannerToSwitch(dir)
 {
-    selectedBanner = (selectedBanner + 1) % Banners.length;
+    if (dir == -1 && selectedBanner == 0)
+    {
+        selectedBanner = Banners.length - 1
+    }
+    else
+    {
+        selectedBanner = (selectedBanner + dir) % Banners.length;
+    }
 }
 
 function switchToBanner()
@@ -25,13 +32,21 @@ function setBannerChangedFeedback()
     $('#tag-icons div:nth-child('+(selectedBanner+1)+')').addClass('selected');
 }
 
-function setBanner()
+function setBanner(dir)
 {
-    checkBannerToSwitch();
+    dir = dir || 1;
+    checkBannerToSwitch(dir);
     switchToBanner();
     setBannerChangedFeedback();
 };
 
+function resetInterval(interval)
+{
+    clearInterval(interval);
+
+}
+
+var bannerChangeInterval = null;
 var selectedBanner = -1;
 var Banners = [
     "Why 9 out of every 10 businesses fail to survive even a year?",
@@ -57,6 +72,24 @@ $(document).ready(function()
         $('html, body').scrollTo(this.hash, this.hash);
         e.preventDefault();
     });
+    $('#taglines').mouseover(function()
+    {
+        $('.icon-left-open, .icon-right-open').show();
+    });
+    $('#taglines').mouseout(function()
+    {
+        $('.icon-left-open, .icon-right-open').hide();
+    });
+    $('.icon-left-open').click(function(){
+        resetInterval(bannerChangeInterval);
+        setBanner(-1);
+        bannerChangeInterval = setInterval(setBanner, 6000);    
+    });
+    $('.icon-right-open').click(function(){
+        resetInterval(bannerChangeInterval);
+        setBanner();
+        bannerChangeInterval = setInterval(setBanner, 6000);    
+    });
     setBanner();
-    setInterval(setBanner, 7000);
+    bannerChangeInterval = setInterval(setBanner, 6000);
 });

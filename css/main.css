@@ -118,7 +118,6 @@ body
 }
 #taglines .content
 {
-    display:table-cell;
     vertical-align: middle;
     color: White;
     font-style: normal;
@@ -157,23 +156,18 @@ body
 }
 #goto-left-banner, #goto-right-banner
 {
+    vertical-align: middle;
     width:30px;
     height:30px;
-    /*background-color: #666666;*/
-    display: inline-block;
-    float: left;
     border-radius:20px;
     cursor: pointer;
-}
-#goto-right-banner
-{
-    margin-left: 20px;
+    font-size: 20px;
+    color: White;
 }
 #goto-left-banner.mousedown, #goto-right-banner.mousedown
 {
     /*background-color: Black;*/
     background-color: #666666;
-    color: White;
 }
 #goto-left-banner.disabled, #goto-right-banner.disabled
 {
@@ -181,10 +175,10 @@ body
 }
 #goto-left-banner .icon-left-open, #goto-right-banner .icon-right-open
 {
-    display: block;
+    display: none;
     margin-top: 5px;
 }
-#goto-left-banner .icon-left-open
+#goto-left-banner .icon-left-open 
 {
     float: left;
 }
