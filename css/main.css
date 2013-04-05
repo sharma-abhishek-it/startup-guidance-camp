@@ -132,20 +132,28 @@ body
     margin-top: 20px;
     /*color: White;*/
     color: #666666;
-    width: 180px;
+    width: 250px;
     margin: auto;
     margin-top: 20px;
     /*display: inline-block;*/
 }
 #tag-icons div
 {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     background-color: #666666;
     list-style-type: none;
     float: left;
+    margin-left: 3px;
     margin-right: 15px;
     border-radius: 10px;
+}
+#tag-icons div.selected
+{
+    background-color: #000;
+    transform: scale(1.5,1.5);
+    -ms-transform: scale(1.5,1.5); /* IE 9 */
+    -moz-transform: scale(1.5,1.5); /* Firefox */
 }
 #goto-left-banner, #goto-right-banner
 {

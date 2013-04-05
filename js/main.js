@@ -5,7 +5,34 @@ function appendBannerSelectors(items, parent)
     };
 }
 
-var selectedBanner = 0;
+function checkBannerToSwitch()
+{
+    selectedBanner = (selectedBanner + 1) % Banners.length;
+}
+
+function switchToBanner()
+{
+    $('#taglines .content').fadeOut(200, function()
+    {
+        $(this).html(Banners[selectedBanner]);
+        $(this).fadeIn(200);
+    });
+}
+
+function setBannerChangedFeedback()
+{
+    $('#tag-icons .selected').removeClass('selected');
+    $('#tag-icons div:nth-child('+(selectedBanner+1)+')').addClass('selected');
+}
+
+function setBanner()
+{
+    checkBannerToSwitch();
+    switchToBanner();
+    setBannerChangedFeedback();
+};
+
+var selectedBanner = -1;
 var Banners = [
     "Why 9 out of every 10 businesses fail to survive even a year?",
     "What makes up a successful business venture?",
@@ -16,35 +43,10 @@ var Banners = [
     "Who is your customer? Why will she pay you?"
 ];
 var BannerSelectors = [];
-function change_banner(dir)
-{
 
-}
 $(document).ready(function()
 {
     appendBannerSelectors(Banners.length, '#tag-icons');
-    $('#goto-left-banner').mousedown(function()
-    {
-        if (selectedBanner == 0 )
-            return;
-        $(this).addClass("mousedown");
-    });
-    $('#goto-right-banner').mousedown(function()
-    {
-        if (selectedBanner == Banners.length - 1)
-            return;
-        $(this).addClass("mousedown");
-    });
-    $('#goto-left-banner').mouseup(function()
-    {
-        $(this).removeClass("mousedown");
-        setBanner(-1);
-    });
-    $('#goto-right-banner').mouseup(function()
-    {
-        $(this).removeClass("mousedown");
-        setBanner(1);
-    });
     $('#navitems a').click(function(e)
     {
         $('html, body').scrollTo(this.hash, this.hash);
@@ -55,36 +57,6 @@ $(document).ready(function()
         $('html, body').scrollTo(this.hash, this.hash);
         e.preventDefault();
     });
-
-    function setBanner(dir){
-        
-        if (selectedBanner == 0 && dir == -1)
-        {
-            return;
-        }
-        else if (selectedBanner == Banners.length - 1 && dir == 1)
-        {
-            return;
-        }
-        else
-        {
-            $('#tag-icons').children().removeClass('disabled');
-            selectedBanner += dir;
-        }
-        if (selectedBanner == 0)
-        {
-            $('#goto-left-banner').addClass('disabled');
-        } 
-        else if (selectedBanner == Banners.length - 1)
-        {
-            $('#goto-right-banner').addClass('disabled');
-        }
-        $('#taglines .content').fadeOut(200, function()
-        {
-            $(this).html(Banners[selectedBanner]);
-            $(this).fadeIn(200);
-        });
-    };
-                
-        
+    setBanner();
+    setInterval(setBanner, 7000);
 });
