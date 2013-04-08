@@ -55,7 +55,7 @@ var Banners = [
     "How to make most out of your mentors, investors and VCs?",
     "How much money? Where from? How to use it?",
     "How technology can actually help?",
-    "Who is your customer? Why will she pay you?"
+    "Who are your customers? Why will they pay you?"
 ];
 var BannerSelectors = [];
 
@@ -72,14 +72,14 @@ $(document).ready(function()
         $('html, body').scrollTo(this.hash, this.hash);
         e.preventDefault();
     });
-    $('#taglines').mouseover(function()
+    /*$('#taglines').mouseover(function()
     {
         $('.icon-left-open, .icon-right-open').show();
     });
     $('#taglines').mouseout(function()
     {
         $('.icon-left-open, .icon-right-open').hide();
-    });
+    });*/
     $('.icon-left-open').click(function(){
         resetInterval(bannerChangeInterval);
         setBanner(-1);
