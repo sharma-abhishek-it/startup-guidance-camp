@@ -19,10 +19,10 @@ function checkBannerToSwitch(dir)
 
 function switchToBanner()
 {
-    $('#taglines .content').fadeOut(200, function()
+    $(lastSelectedBanner).fadeOut(200, function()
     {
-        $(this).html(Banners[selectedBanner]);
-        $(this).fadeIn(200);
+        lastSelectedBanner = Banners[selectedBanner];
+        $(lastSelectedBanner).fadeIn(200);
     });
 }
 
@@ -40,24 +40,10 @@ function setBanner(dir)
     setBannerChangedFeedback();
 };
 
-function resetInterval(interval)
-{
-    clearInterval(interval);
-
-}
-
 var bannerChangeInterval = null;
-var selectedBanner = -1;
-var Banners = [
-    "Why 9 out of every 10 businesses fail to survive even a year?",
-    "What makes up a successful business venture?",
-    "Is a prototype needed? How can I develop one?",
-    "How to make most out of your mentors, investors and VCs?",
-    "How much money? Where from? How to use it?",
-    "How technology can actually help?",
-    "Who are your customers? Why will they pay you?"
-];
-var BannerSelectors = [];
+var selectedBanner = 0;
+var Banners = $('#taglines .content span');
+var lastSelectedBanner = Banners[0];
 
 $(document).ready(function()
 {
@@ -72,24 +58,18 @@ $(document).ready(function()
         $('html, body').scrollTo(this.hash, this.hash);
         e.preventDefault();
     });
-    /*$('#taglines').mouseover(function()
-    {
-        $('.icon-left-open, .icon-right-open').show();
-    });
-    $('#taglines').mouseout(function()
-    {
-        $('.icon-left-open, .icon-right-open').hide();
-    });*/
     $('.icon-left-open').click(function(){
-        resetInterval(bannerChangeInterval);
+        clearInterval(bannerChangeInterval);
         setBanner(-1);
         bannerChangeInterval = setInterval(setBanner, 6000);    
     });
     $('.icon-right-open').click(function(){
-        resetInterval(bannerChangeInterval);
+        clearInterval(bannerChangeInterval);
         setBanner();
         bannerChangeInterval = setInterval(setBanner, 6000);    
     });
-    setBanner();
+
+    setBannerChangedFeedback();
+
     bannerChangeInterval = setInterval(setBanner, 6000);
 });

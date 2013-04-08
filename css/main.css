@@ -134,6 +134,11 @@ body
     font-family: 'Fredericka the Great', cursive;
     text-align: center;
 }
+
+#taglines .content span
+{
+    display: none;
+}
 #tag-icons
 {
     /*font-size: 20px;*/
